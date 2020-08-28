@@ -1,48 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iplant/information_page.dart';
-import 'package:iplant/planification_page.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class PlanificationPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: "Roboto",
-      ),
-      initialRoute: "/",
-      routes: {
-        "/": (context) => MyHomePage(),
-        "/information": (context) => InformationPage(),
-        "/planification": (context) => PlanificationPage(),
-      },
-    );
-  }
+  State<StatefulWidget> createState() => PlanificationPageState();
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class PlanificationPageState extends State<PlanificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Center(
           child: Text(
-            "IPLANT",
+            "PLANIFICATION",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -64,9 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.green)),
                     child: FlatButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/planification');
-                      },
+                      onPressed: () {},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -93,9 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.green)),
                     child: FlatButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/information');
-                      },
+                      onPressed: () {},
                       child: Text(
                         "INFORMATIONS",
                         style: TextStyle(
